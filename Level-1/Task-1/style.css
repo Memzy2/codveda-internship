@@ -6,11 +6,12 @@
 }
 
 :root {
-    --bg-color: #ffffff; /* Pure White as per your preference */
-    --text-main: #1a1a1a; /* Soft Black */
-    --text-muted: #666666;
-    --accent: #000000;
-    --border: #eeeeee;
+    --bg-light: #f8f9ff;          /* Very light, airy lavender tint (No more metallic blue) */
+    --bg-section: #ffffff;       /* Pure white for sections to create clean depth */
+    --text-main: #1e1b4b;        /* Deep Midnight Navy for readability */
+    --text-muted: #6366f1;       /* Soft Indigo for subtext */
+    --accent-primary: #8b5cf6;   /* Electric Violet */
+    --border: #e2e8f0;           /* Subtle cool grey border */
 }
 
 html {
@@ -19,18 +20,19 @@ html {
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: var(--bg-color);
+    background-color: var(--bg-light);
     color: var(--text-main);
-    line-height: 1.5;
+    line-height: 1.6;
 }
 
-/* 2. NAVIGATION BAR (Minimalist) */
+/* 2. NAVIGATION BAR */
 .navbar {
     position: sticky;
     top: 0;
     width: 100%;
     z-index: 1000;
-    background: var(--bg-color);
+    background: rgba(248, 249, 255, 0.9); /* Matches bg-light with transparency */
+    backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--border);
 }
 
@@ -44,10 +46,13 @@ body {
 }
 
 .logo {
-    font-weight: 600;
-    letter-spacing: 3px;
-    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    font-size: 1.1rem;
     text-transform: uppercase;
+    background: linear-gradient(90deg, var(--accent-primary), var(--text-main));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .nav-links {
@@ -61,12 +66,12 @@ body {
     color: var(--text-main);
     font-size: 0.85rem;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: opacity 0.3s;
+    font-weight: 600;
+    transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
-    opacity: 0.5;
+    color: var(--accent-primary);
 }
 
 /* 3. HERO SECTION */
@@ -80,38 +85,49 @@ body {
 }
 
 .hero-content h1 {
-    font-size: clamp(2.5rem, 6vw, 4rem);
-    font-weight: 600;
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 800;
     line-height: 1.1;
-    margin-bottom: 1rem;
-    color: var(--accent);
+    margin-bottom: 1.5rem;
 }
 
+/* Gradient text for the headline */
+.hero-content h1 span {
+    background: linear-gradient(90deg, var(--accent-primary), var(--text-main));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-main-text {
+    font-size: larger;
+    color: var(--accent-primary);
+}
 .hero-content p {
-    max-width: 500px;
-    color: var(--text-muted);
-    font-size: 1.1rem;
-    margin-bottom: 2rem;
+    max-width: 550px;
+    color: var(--text-main);
+    font-size: 1.2rem;
+    margin-bottom: 2.5rem;
 }
 
 .cta-button {
     display: inline-block;
-    padding: 1rem 2rem;
-    border: 1px solid var(--accent);
-    color: var(--accent);
+    padding: 1.2rem 2.5rem;
+    background: linear-gradient(45deg, var(--accent-primary), var(--text-main));
+    color: #ffffff;
     text-decoration: none;
     font-size: 0.9rem;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: background 0.3s, color 0.3s;
+    font-weight: 700;
+    border-radius: 50px; /* Rounded for a softer, premium feel */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .cta-button:hover {
-    background: var(--accent);
-    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(139, 92, 246, 0.3);
 }
 
-/* 4. SERVICES SECTION (Clean Flexbox) */
+/* 4. SERVICES SECTION */
 .services {
     padding: 8rem 2rem;
     max-width: 1100px;
@@ -119,40 +135,50 @@ body {
 }
 
 .section-title {
-    font-size: 0.8rem;
+    font-size: 1rem;
     text-transform: uppercase;
-    letter-spacing: 4px;
-    color: var(--text-muted);
+    letter-spacing: 5px;
+    color: var(--text-main);
     margin-bottom: 4rem;
 }
 
 .services-container {
     display: flex;
-    gap: 4rem;
+    gap: 3rem;
     flex-wrap: wrap;
 }
 
 .service-card {
     flex: 1;
     min-width: 280px;
+    background: var(--bg-section); /* Pure White */
+    padding: 3rem 2rem;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+    transition: all 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-primary);
+    box-shadow: 0 10px 30px rgba(139, 92, 246, 0.1);
 }
 
 .service-card h3 {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     margin-bottom: 1rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 1px solid var(--accent);
-    display: inline-block;
+    color: var(--accent-primary);
 }
 
 .service-card p {
-    color: var(--text-muted);
-    font-size: 0.95rem;
+    color: var(--text-main);
 }
 
 /* 5. CONTACT SECTION */
 .contact {
     padding: 8rem 2rem;
+    background-color: var(--bg-section); /* Contrast white against the light background */
     border-top: 1px solid var(--border);
 }
 
@@ -160,79 +186,75 @@ body {
     max-width: 1100px;
     margin: 0 auto;
     display: flex;
-    gap: 4rem;
+    gap: 5rem;
     align-items: center;
 }
 
-.contact-image img {
-    width: 350px;
-    height: 450px;
-    object-fit: cover;
-    filter: grayscale(100%);
-}
-
 .profile-circle {
-    width: 250px;  /* Must be the same as height */
-    height: 250px; /* Must be the same as width */
-    border-radius: 50%; /* This creates the circle */
-    object-fit: cover; /* Keeps the image proportions correct */
-    border: 2px solid var(--accent); /* Optional: adds a sharp border line */
-    transition: transform 0.3s ease;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 6px solid var(--text-main);
+    box-shadow: 0 15px 35px rgba(139, 92, 246, 0.15);
+    transition: all 0.4s ease;
 }
 
-/* Optional: Slight zoom effect when hovering over the circle link */
 .contact-image a:hover .profile-circle {
-    transform: scale(1.05);
+    border-color: var(--accent-secondary);
+    transform: scale(1.02);
 }
 
 .contact-info h2 {
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
-}
-
-.contact-list {
-    list-style: none;
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
 }
 
 .contact-list li {
-    margin-bottom: 0.8rem;
+    margin-bottom: 1.2rem;
     font-size: 1.1rem;
+    color: var(--text-muted);
+}
+
+.contact-list strong {
+    color: var(--text-main);
 }
 
 /* 6. FOOTER */
 footer {
-    padding: 4rem 2rem;
-    text-align: left;
+    padding: 6rem 2rem;
     max-width: 1100px;
     margin: 0 auto;
-    border-top: 1px solid var(--border);
 }
 
 .quote {
     font-family: serif;
     font-style: italic;
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
+    font-size: 1.5rem;
+    margin-bottom: 3rem;
+    color: var(--text-main);
+    border-left: 4px solid var(--accent-primary);
+    padding-left: 2rem;
 }
 
 .coded-by {
     font-size: 0.8rem;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    color: var(--text-muted);
+    letter-spacing: 2px;
+}
+
+.social-links a {
+    color: var(--accent-primary);
+    margin-right: 2rem;
+    text-decoration: none;
+    font-weight: 700;
 }
 
 /* 7. RESPONSIVENESS */
 @media (max-width: 768px) {
-    .contact-container {
-        flex-direction: column;
-    }
-    
-    .contact-image img {
-        width: 100%;
-        height: auto;
-    }
-    
-    .nav-links {
-        display: none;
-    }
+    .contact-container { flex-direction: column; text-align: center; }
+    .nav-links { display: none; }
+    .hero { text-align: center; padding: 6rem 2rem; }
+    .profile-circle { width: 220px; height: 220px; }
 }
