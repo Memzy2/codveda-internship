@@ -6,12 +6,12 @@
 }
 
 :root {
-    --bg-light: #f8f9ff;          /* Very light, airy lavender tint (No more metallic blue) */
-    --bg-section: #ffffff;       /* Pure white for sections to create clean depth */
-    --text-main: #1e1b4b;        /* Deep Midnight Navy for readability */
-    --text-muted: #6366f1;       /* Soft Indigo for subtext */
-    --accent-primary: #8b5cf6;   /* Electric Violet */
-    --border: #e2e8f0;           /* Subtle cool grey border */
+    --bg-light: #f8f9ff;         
+    --bg-section: #ffffff;      
+    --text-main: #1e1b4b;        
+    --text-muted: #6366f1;       
+    --accent-primary: #8b5cf6;   
+    --border: #e2e8f0;           
 }
 
 html {
@@ -31,7 +31,7 @@ body {
     top: 0;
     width: 100%;
     z-index: 1000;
-    background: rgba(248, 249, 255, 0.9); /* Matches bg-light with transparency */
+    background: rgba(248, 249, 255, 0.9); 
     backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--border);
 }
@@ -91,7 +91,6 @@ body {
     margin-bottom: 1.5rem;
 }
 
-/* Gradient text for the headline */
 .hero-content h1 span {
     background: linear-gradient(90deg, var(--accent-primary), var(--text-main));
     -webkit-background-clip: text;
@@ -115,10 +114,10 @@ body {
     background: linear-gradient(45deg, var(--accent-primary), var(--text-main));
     color: #ffffff;
     text-decoration: none;
-    font-size: 0.9rem;
+    font-size: 1.1rem;
     text-transform: uppercase;
     font-weight: 700;
-    border-radius: 50px; /* Rounded for a softer, premium feel */
+    border-radius: 50px; 
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -151,7 +150,7 @@ body {
 .service-card {
     flex: 1;
     min-width: 280px;
-    background: var(--bg-section); /* Pure White */
+    background: var(--bg-section); 
     padding: 3rem 2rem;
     border-radius: 12px;
     border: 1px solid var(--border);
@@ -175,10 +174,30 @@ body {
     color: var(--text-main);
 }
 
+.BM-button {
+    display: block;
+    margin: 60px auto;
+    background: linear-gradient(45deg, var(--accent-primary), var(--text-main));;
+    color: #ffffff;
+    padding: 1.2rem 2.5rem;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 50px; 
+    border: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.BM-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(139, 92, 246, 0.3);
+}
+
 /* 5. CONTACT SECTION */
 .contact {
     padding: 8rem 2rem;
-    background-color: var(--bg-section); /* Contrast white against the light background */
+    background-color: var(--bg-section);
     border-top: 1px solid var(--border);
 }
 
