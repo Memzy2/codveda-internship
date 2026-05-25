@@ -1,43 +1,155 @@
-/* GENERAL  SETUP */
+/* GENERAL SETUP */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: rgb(237, 219, 222);
+    background-color: #f5d7dc; 
+    color: #2d3436;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 header {
-text-align: center;
+    text-align: center;
+    padding: 3rem 1rem 1rem;
 }
 
-form {
-text-align: center;
+header h1 {
+    font-size: 2rem;
+    color: #1e1b4b;
+}
+
+/* FORM CARD STYLING */
+.form-container {
+    max-width: 450px;
+    width: 90%;
+    margin: 2rem auto;
+    background: #ffffff;
+    padding: 2.5rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.input-group label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #4f46e5;
+}
+
+.input-group input {
+    padding: 0.8rem 1rem;
+    font-size: 0.95rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+/* Focus and Blur States */
+.input-group input:focus {
+    border-color: #4f46e5;
+    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.15);
+}
+
+/* Validation Style Adjustments */
+.input-group.invalid input {
+    border-color: #ef4444;
+    background-color: #fff5f5;
+}
+
+.input-group.valid input {
+    border-color: #10b981;
+}
+
+/* Error Text styling */
+.error {
+    font-size: 0.8rem;
+    color: #ef4444;
+    margin-top: 0.4rem;
+    min-height: 1.2rem; 
+}
+
+/* Submit Button */
+.submit-btn {
+    width: 100%;
+    padding: 1rem;
+    background-color: #ec4899;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s, opacity 0.2s;
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    background-color: #4f46e5;
+    opacity: 0.9;
+}
+
+/* Success Banner */
+.success-message {
+    background-color: #d1fae5;
+    color: #065f46;
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.hidden {
+    display: none;
 }
 
 /* FOOTER */
 footer {
+    margin-top: auto; 
     text-align: center;
-    padding: 6rem 2rem;
-    max-width: 1100px;
-    margin: 0 auto;
+    padding: 4rem 2rem 2rem;
+    width: 100%;
+}
+
+.quote {
+    font-style: italic;
+    color: #64748b;
+    margin-bottom: 0.5rem;
 }
 
 .coded-by {
     font-size: 0.8rem;
     text-transform: uppercase;
-    color: var(--text-muted);
+    color: #4f46e5;
     letter-spacing: 2px;
 }
 
-.social-links a {
-    color: hotpink;
-    margin-right: 2rem;
-    text-decoration: none;
-    font-weight: 700;
+.social-links {
+    margin-top: 0.8rem;
 }
 
-/* 7. RESPONSIVENESS */
-@media (max-width: 768px) {
-    .contact-container { flex-direction: column; text-align: center; }
-    .nav-links { display: none; }
-    .hero { text-align: center; padding: 6rem 2rem; }
-    .profile-circle { width: 220px; height: 220px; }
+.social-links a {
+    color: #ec4899; 
+    margin: 0 1rem;
+    text-decoration: none;
+    font-weight: 700;
+    transition: color 0.2s;
+}
+
+.social-links a:hover {
+    color: #4f46e5;
 }

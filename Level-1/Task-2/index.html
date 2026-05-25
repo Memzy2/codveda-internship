@@ -3,48 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-</head>
     <title>Interactive Form</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <h1>
-            Interactive Form
-        </h1>
+        <h1>Interactive Form</h1>
     </header>
-    <form class="form">
-        <label for="text">
-            Name:
-        </label>
-        <input type="text" name="name" placeholder="enter full name">
-        <br>
-        <br>
 
-        <label for="email">
-            Email:
-        </label>
-        <input type="email" name="email" placeholder="email address">
-        <br>
-        <br>
+    <main class="form-container">
+        <div id="success-panel" class="success-message hidden">
+            🎉 Form Submitted Successfully!
+        </div>
 
-        <label for="tel">
-            Phone Number:
-        </label>
-        <input type="tel" name="telephone number">
-        <br>
-        <br>
+        <form class="form" id="interactiveForm" novalidate>
+            <div class="input-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter full name">
+                <span class="error" id="name-error"></span>
+            </div>
 
-        <label for="password">
-            Password:
-        </label>
-        <input type="password" name="password">
-        <br>
-        <br>
+            <div class="input-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Email address">
+                <span class="error" id="email-error"></span>
+            </div>
 
-        <input type="submit" value="Submit">
-    </form>
+            <div class="input-group">
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" placeholder="e.g., +123456789">
+                <span class="error" id="phone-error"></span>
+            </div>
+
+            <div class="input-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" placeholder="Min. 8 characters">
+                <span class="error" id="password-error"></span>
+            </div>
+
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+    </main>
+
     <footer>
         <div class="footer-content">
             <p class="quote">"Ideas are funny little things. They don't work unless you do."</p>
@@ -55,5 +56,7 @@
             </div>
         </div>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
